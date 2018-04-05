@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsExit", "WindowsFormsExit\WindowsFormsExit.csproj", "{7A799CD3-C5AA-4B6B-A1C4-AFE5D5804EF5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsExit", "WinFormsExit\WinFormsExit.csproj", "{7A799CD3-C5AA-4B6B-A1C4-AFE5D5804EF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsExit.Business", "WindowsFormsExit.Business\WindowsFormsExit.Business.csproj", "{E89C3DE6-E3A2-46B0-87D4-ED25A4475E2A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsExit.Business", "WinFormsExit.Business\WinFormsExit.Business.csproj", "{E89C3DE6-E3A2-46B0-87D4-ED25A4475E2A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfExit", "WpfExit\WpfExit.csproj", "{375C1593-31B7-4DAE-9B28-D26758BECD77}"
 EndProject

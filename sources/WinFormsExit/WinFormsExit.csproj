@@ -94,9 +94,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WindowsFormsExit.Business\WindowsFormsExit.Business.csproj">
+    <ProjectReference Include="..\WindowsFormsExit.Business\WinFormsExit.Business.csproj">
       <Project>{e89c3de6-e3a2-46b0-87d4-ed25a4475e2a}</Project>
-      <Name>WindowsFormsExit.Business</Name>
+      <Name>WinFormsExit.Business</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
