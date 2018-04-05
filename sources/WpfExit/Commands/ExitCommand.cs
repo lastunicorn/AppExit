@@ -14,14 +14,34 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+using System;
 using System.Windows;
+using System.Windows.Input;
 
-namespace DustInTheWind.WpfExit
+namespace DustInTheWind.WpfExit.Commands
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
-    internal partial class App : Application
+    internal class ExitCommand : ICommand
     {
+        private readonly WpfExitApplication application;
+
+        public event EventHandler CanExecuteChanged;
+
+        public ExitCommand(WpfExitApplication application)
+        {
+            this.application = application ?? throw new ArgumentNullException(nameof(application));
+        }
+
+        public bool CanExecute(object parameter)
+        {
+            return true;
+        }
+
+        public void Execute(object parameter)
+        {
+            bool allowExit = application.Exit();
+
+            if (allowExit)
+                Application.Current.Shutdown();
+        }
     }
 }

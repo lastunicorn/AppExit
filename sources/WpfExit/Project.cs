@@ -14,14 +14,39 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using System.Windows;
+using System;
 
 namespace DustInTheWind.WpfExit
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
-    internal partial class App : Application
+    internal class Project
     {
+        private bool isSaved = true;
+
+        public bool IsSaved
+        {
+            get => isSaved;
+            private set
+            {
+                isSaved = value;
+                OnIsSavedChanged();
+            }
+        }
+
+        public event EventHandler IsSavedChanged;
+
+        public void Save()
+        {
+            IsSaved = true;
+        }
+
+        public void ModifySomeData()
+        {
+            IsSaved = false;
+        }
+
+        protected virtual void OnIsSavedChanged()
+        {
+            IsSavedChanged?.Invoke(this, EventArgs.Empty);
+        }
     }
 }

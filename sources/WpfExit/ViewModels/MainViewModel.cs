@@ -15,44 +15,32 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
-using System.Drawing;
-using WindowsFormsExit.Commands;
+using DustInTheWind.WpfExit.Commands;
 
-namespace WindowsFormsExit.ViewModels
+namespace DustInTheWind.WpfExit.ViewModels
 {
     internal class MainViewModel : ViewModelBase
     {
-        private readonly WindowsFormsExitApplication application;
-        private string isSavedText;
-        private Color isSavedColor;
-
-        public string IsSavedText
-        {
-            get => isSavedText;
-            private set
-            {
-                isSavedText = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public Color IsSavedColor
-        {
-            get => isSavedColor;
-            set
-            {
-                isSavedColor = value;
-                OnPropertyChanged();
-            }
-        }
+        private readonly WpfExitApplication application;
+        private bool isSaved;
 
         public ExitCommand ExitCommand { get; }
         public ChangeCommand ChangeCommand { get; }
         public SaveCommand SaveCommand { get; }
 
+        public bool IsSaved
+        {
+            get => isSaved;
+            private set
+            {
+                isSaved = value;
+                OnPropertyChanged();
+            }
+        }
+
         public MainViewModel()
         {
-            application = new WindowsFormsExitApplication();
+            application = new WpfExitApplication();
 
             ExitCommand = new ExitCommand(application);
             ChangeCommand = new ChangeCommand(application);
@@ -70,16 +58,7 @@ namespace WindowsFormsExit.ViewModels
 
         private void UpdateData()
         {
-            if (application.CurrentProject.IsSaved)
-            {
-                IsSavedText = "yes";
-                IsSavedColor = Color.DarkSeaGreen;
-            }
-            else
-            {
-                IsSavedText = "no";
-                IsSavedColor = Color.OrangeRed;
-            }
+            IsSaved = application.CurrentProject.IsSaved;
         }
     }
 }

@@ -15,13 +15,20 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System.Windows;
+using DustInTheWind.WpfExit.ViewModels;
 
-namespace DustInTheWind.WpfExit
+namespace DustInTheWind.WpfExit.Views
 {
     /// <summary>
-    /// Interaction logic for App.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    internal partial class App : Application
+    internal partial class MainWindow : Window
     {
+        public MainWindow()
+        {
+            InitializeComponent();
+
+            DataContext = new MainViewModel();
+        }
     }
 }
