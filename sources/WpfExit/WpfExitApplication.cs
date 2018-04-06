@@ -16,6 +16,7 @@
 
 using System;
 using System.Windows;
+using DustInTheWind.WpfExit.Business;
 
 namespace DustInTheWind.WpfExit
 {

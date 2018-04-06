@@ -16,9 +16,9 @@
 
 using System;
 
-namespace DustInTheWind.WpfExit
+namespace DustInTheWind.WpfExit.Business
 {
-    internal class Project
+    public class Project
     {
         private bool isSaved = true;
 

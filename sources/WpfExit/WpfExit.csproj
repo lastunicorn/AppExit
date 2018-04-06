@@ -50,7 +50,6 @@
     </ApplicationDefinition>
     <Compile Include="BoolToValueConverter.cs" />
     <Compile Include="Commands\ChangeCommand.cs" />
-    <Compile Include="Project.cs" />
     <Compile Include="Commands\SaveCommand.cs" />
     <Compile Include="ViewModelBase.cs" />
     <Compile Include="WpfExitApplication.cs" />
@@ -97,6 +96,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WpfExit.Business\WpfExit.Business.csproj">
+      <Project>{e0a26473-5457-4527-87b1-af5401c18b26}</Project>
+      <Name>WpfExit.Business</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

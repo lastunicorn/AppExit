@@ -27,7 +27,8 @@ namespace WindowsFormsExit.Views
         {
             InitializeComponent();
 
-            mainViewModel = new MainViewModel();
+            WindowsFormsExitApplication application = new WindowsFormsExitApplication();
+            mainViewModel = new MainViewModel(application);
 
             buttonExit.Command = mainViewModel.ExitCommand;
             buttonChange.Command = mainViewModel.ChangeCommand;

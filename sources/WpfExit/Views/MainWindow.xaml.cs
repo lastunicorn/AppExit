@@ -28,7 +28,8 @@ namespace DustInTheWind.WpfExit.Views
         {
             InitializeComponent();
 
-            DataContext = new MainViewModel();
+            WpfExitApplication application = new WpfExitApplication();
+            DataContext = new MainViewModel(application);
         }
     }
 }

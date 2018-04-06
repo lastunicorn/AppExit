@@ -38,15 +38,15 @@ namespace DustInTheWind.WpfExit.ViewModels
             }
         }
 
-        public MainViewModel()
+        public MainViewModel(WpfExitApplication application)
         {
-            application = new WpfExitApplication();
+            this.application = application ?? throw new ArgumentNullException(nameof(application));
 
-            ExitCommand = new ExitCommand(application);
-            ChangeCommand = new ChangeCommand(application);
-            SaveCommand = new SaveCommand(application);
+            ExitCommand = new ExitCommand(this.application);
+            ChangeCommand = new ChangeCommand(this.application);
+            SaveCommand = new SaveCommand(this.application);
 
-            application.CurrentProject.IsSavedChanged += HandleCurrentProjectIsSavedChanged;
+            this.application.CurrentProject.IsSavedChanged += HandleCurrentProjectIsSavedChanged;
 
             UpdateData();
         }
